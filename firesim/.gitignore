@@ -1,0 +1,10 @@
+env.sh
+riscv-tools-install
+*memory_stats.csv
+sim/ucli.key
+target-design/switch/switchconfig.h
+sim[0-9]
+build-setup-log
+tags
+build
+scala-doc-env.sh
