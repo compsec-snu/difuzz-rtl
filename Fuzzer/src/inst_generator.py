@@ -131,7 +131,8 @@ class rvInstGenerator():
     def _get_symbol(self, tpe, my_label, max_label, part):
         if tpe == MEM_W:
             n = random.randint(0, 5) # TODO, num_mem_sections = 6
-            symbol = 'd' + str(n)
+            k = random.randint(0, 27)
+            symbol = 'd_' + str(n) + '_' + str(k)
         elif tpe == MEM_R:
             rand = random.random()
             if rand < 0.2:
@@ -139,7 +140,8 @@ class rvInstGenerator():
                 symbol = part + str(n)
             else:
                 n = random.randint(0, 5)
-                symbol = 'd' + str(n)
+                k = random.randint(0, 27)
+                symbol = 'd_' + str(n) + '_' + str(k)
         else:
             if tpe in [ CF_J, CF_RET ]:
                 num = random.randint(my_label + 1, max_label)
@@ -168,6 +170,10 @@ class rvInstGenerator():
             self.suffix_num += 1
 
         (syntax, xregs, fregs, imms, symbols) = self.opcodes_map.get(opcode)
+        xregs = list(xregs)
+        fregs = list(fregs)
+        imms = list(imms)
+        symbols = list(symbols)
 
         tpe = NONE
         insts = [ syntax ]
