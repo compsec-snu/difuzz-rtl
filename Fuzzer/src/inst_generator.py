@@ -170,6 +170,10 @@ class rvInstGenerator():
             self.suffix_num += 1
 
         (syntax, xregs, fregs, imms, symbols) = self.opcodes_map.get(opcode)
+        xregs = list(xregs)
+        fregs = list(fregs)
+        imms = list(imms)
+        symbols = list(symbols)
 
         tpe = NONE
         insts = [ syntax ]
