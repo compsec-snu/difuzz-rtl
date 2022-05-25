@@ -6,23 +6,28 @@ DifuzzRTL is a differential fuzz testing approach for CPU verification.
 We introduce new coverage metric, *register-coverage*, which comprehensively captures the states of an RTL design and correctly guides the input generation.
 DifuzzRTL automatically instruments *register-coverage*, randomly generates and mutates instructions defined in ISA, then cross-check against an ISA simulator to
 detect bugs.
+DiFuzzRTL is accepted at IEEE S&P 2021 ([paper][paperlink])
+
+[paperlink]: https://www.computer.org/csdl/proceedings-article/sp/2021/893400b778/1t0x9G4Q5MI
 
 ## Setup
 
 ### Prerequisite
+Please install the correct versions!
+
 1. [sbt][sbtlink] for FIRRTL
 
 [sbtlink]: https://www.scala-sbt.org/
 
-2. [verilator][verilatorlink] for RTL simulation
+2. [verilator][verilatorlink] for RTL simulation (v4.106)
 
 [verilatorlink]: https://github.com/verilator/verilator
 
-3. [cocotb][cocotblink] for RTL simulation
+3. [cocotb][cocotblink] for RTL simulation (1.5.2)
 
 [cocotblink]: https://docs.cocotb.org/en/stable/
 
-4. [riscv][riscvlink] for RISC-V instruction mutation
+4. [riscv][riscvlink] for RISC-V instruction mutation (2021.04.23)
 
 [riscvlink]: https://github.com/riscv/riscv-gnu-toolchain.git
 
