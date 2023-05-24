@@ -182,6 +182,7 @@ class rvRTLhost():
         for addr in memory.keys():
             if addr not in bootrom_addrs and addr < DRAM_BASE:
                 mem_check = False
+                break
 
         if not mem_check:
             return (ILL_MEM, self.get_covsum())
